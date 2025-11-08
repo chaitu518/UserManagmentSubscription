@@ -8,9 +8,9 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class User {
-    long id;
-    String name;
-    String address;
-    String planName;
-    LocalDate Subscription = LocalDate.now();
+   private long id;
+   private String name;
+   private String address;
+   private String planName;
+   private LocalDate Subscription = LocalDate.now();
 }
