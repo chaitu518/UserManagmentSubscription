@@ -15,7 +15,7 @@ public class InMemoryRegistry {
     public InMemoryRegistry() {
         users = new HashMap<Long, User>();
     }
-    public User add(User user) {
+    public User add(User  user) {
         user.setId(++id);
         users.put(user.getId(), user);
         return user;
