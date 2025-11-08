@@ -11,20 +11,18 @@ import java.util.Map;
 @Repository
 public class InMemoryRegistry {
     Map<Long, User> users;
-    private long id=1;
+    private long id=0;
     public InMemoryRegistry() {
-        users = new HashMap<Long, User>();
+        users = new HashMap<>();
     }
     public User add(User  user) {
         user.setId(++id);
         users.put(user.getId(), user);
         return user;
     }
-    public User get(long id) {
-        return users.get(id);
-    }
+
     public List<User> getAll() {
-        return new ArrayList<User>(users.values());
+        return new ArrayList<>(users.values());
     }
     public boolean remove(long id) {
         if(users.containsKey(id)) {
@@ -40,7 +38,7 @@ public class InMemoryRegistry {
        return null;
     }
     public User UpdateUser(User user) {
-        if(users.containsKey(id)) {
+        if(users.containsKey(user.getId())) {
             User user1 = users.get(user.getId());
             if(user.getName()!=null){
                 user1.setName(user.getName());

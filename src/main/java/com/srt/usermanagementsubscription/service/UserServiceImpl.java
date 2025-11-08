@@ -1,6 +1,6 @@
 package com.srt.usermanagementsubscription.service;
 
-import com.srt.usermanagementsubscription.CustomException.UserNotFoundException;
+import com.srt.usermanagementsubscription.Exceptions.CustomExceptions.UserNotFoundException;
 import com.srt.usermanagementsubscription.model.User;
 import com.srt.usermanagementsubscription.repository.InMemoryRegistry;
 import org.springframework.stereotype.Service;
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findUserById(int id) {
+    public User findUserById(long id) {
         User user = inMemoryRegistry.findUser(id);
         if (user == null) {
             throw new UserNotFoundException("User id is not foud");

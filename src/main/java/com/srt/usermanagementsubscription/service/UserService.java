@@ -9,5 +9,5 @@ public interface UserService {
     public User updateUser(User user);
     public void deleteUser(long id);
     public List<User> findUsers();
-    public User findUserById(int id);
+    public User findUserById(long id);
 }
